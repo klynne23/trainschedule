@@ -1,0 +1,12 @@
+/* ------------- */
+/* JUMBOTRON CSS */
+/* ------------- */
+
+.jumbotron {
+    background-color: #01015c;
+    color: white;
+}
+
+.jumbotron h1, .jumbotron h5 {
+    text-align: center;
+}
