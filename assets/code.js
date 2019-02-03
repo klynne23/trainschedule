@@ -66,10 +66,11 @@ database.ref().on("child_added", function (newTrain) {
 
     // remainder will give us how many minutes have passed since last train
     var timePassed = timeDif % trainFreq;
-    console.log("minutes since last train: " + timePassed);
+
+    console.log("minutes since last train: " + Math.abs(timePassed));
 
     // use the frequency and time passed to calculate minutes until the next train
-    var nextTrainMinutes = trainFreq - timePassed;
+    var nextTrainMinutes = trainFreq - Math.abs(timePassed);
     console.log("minutes until next train: " + nextTrainMinutes);
 
     // calculate next arrival time by adding current time to next train minutes
