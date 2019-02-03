@@ -35,7 +35,6 @@ $("#addTrainButton").on("click", function (event) {
         freq: trainFreq
     };
 
-
     // push the new train information into the database
     database.ref().push(newTrain);
 
@@ -45,16 +44,11 @@ $("#addTrainButton").on("click", function (event) {
     $("#start-time").val("");
     $("#train-frequency").val("");
 
-    alert("Train Added Successfully");
-
-
 
 }); // end addTrainButton click function
 
 
-// firebase event that adds a new row to the train schedule when
-// a new train is added to the database
-
+// firebase event that adds a new row to the train schedule when a new train is added to the database
 database.ref().on("child_added", function (newTrain) {
 
     // put each value into a variable
@@ -63,14 +57,12 @@ database.ref().on("child_added", function (newTrain) {
     var trainStart = newTrain.val().start;
     var trainFreq = newTrain.val().freq;
 
-    // use moment for grabbing time and calculating ETAs
-
+    // use moment for grabbing time and calculating arrival times
     // convert the submitted start time
-    var trainStartConverted = moment(trainStart, "hh:mm A");
+    var trainStartConverted = moment(trainStart, "hh:mm");
 
     // get the difference between current time and train start time in minutes
     var timeDif = moment().diff(moment(trainStartConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + timeDif);
 
     // remainder will give us how many minutes have passed since last train
     var timePassed = timeDif % trainFreq;
@@ -80,9 +72,8 @@ database.ref().on("child_added", function (newTrain) {
     var nextTrainMinutes = trainFreq - timePassed;
     console.log("minutes until next train: " + nextTrainMinutes);
 
-    // Next train
+    // calculate next arrival time by adding current time to next train minutes
     var nextTrain = moment().add(nextTrainMinutes, "minutes").format("hh:mm A");
-    // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm A"));
 
     console.log(`Train Name: ${trainName}`);
     console.log(`Train Destination: ${trainDest}`);

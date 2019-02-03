@@ -5,8 +5,25 @@
 .jumbotron {
     background-color: #01015c;
     color: white;
+    border-radius: 0px;
 }
 
 .jumbotron h1, .jumbotron h5 {
     text-align: center;
 }
+
+
+
+/* -------- */
+/* CARD CSS */
+/* -------- */
+
+.card {
+    margin-bottom: 3%;
+}
+
+.card-header {
+    background-color: #2f015c;
+    color: white;
+}
+

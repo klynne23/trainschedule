@@ -24,22 +24,22 @@
 
 <body>
 
+    
+    
+    
+    
+    <!-- --------- -->
+    <!-- jumbotron -->
+    <!-- --------- -->
+    
+    <div class="jumbotron">
+        <h1>Train Schedule</h1>
+        <h5>_______________</h5>
+    </div><!-- end jumbotron -->
+    
+    
+    
     <div class="container">
-
-
-
-
-        <!-- --------- -->
-        <!-- jumbotron -->
-        <!-- --------- -->
-
-        <div class="jumbotron">
-            <h1>Train Schedule</h1>
-            <h5>_______________</h5>
-        </div><!-- end jumbotron -->
-
-
-
 
         <!-- -------------- -->
         <!-- train schedule -->
@@ -53,7 +53,7 @@
                     <div class="card">
                         <div class="card-header">Current Train Schedule</div> <!-- end card-header -->
                         <!-- <div class="card-body"> -->
-                            <table class="table table-hover table-dark table-border" id="trainTable">
+                            <table class="table table-hover" id="trainTable">
                                 <thead>
                                     <tr>
                                         <th scope="col">Train Name</th>
@@ -63,13 +63,7 @@
                                         <th scope="col">Minutes Away</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <!-- example row -->
-                                    <td>Example Train</td>
-                                    <td>Chicago</td>
-                                    <td>10</td>
-                                    <td>05:30 PM</td>
-                                    <td>(moment)</td>
+                                <tbody> 
                                     <!-- added trains will go here -->
                                 </tbody>
                             </table>
@@ -106,14 +100,14 @@
                                     <input class="form-control" id="train-destination" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <label for="start-time">First Train Arrival Time (HH:MM military)</label>
+                                    <label for="start-time">First Train Arrival Time (HH:MM)</label>
                                     <input class="form-control" id="start-time" type="text">
                                 </div>
                                 <div class="form-group">
                                     <label for="train-frequency">Frequency (in minutes)</label>
                                     <input class="form-control" id="train-frequency" type="text">
                                 </div>
-                                <button class="btn btn-primary" id="addTrainButton">Submit</button>
+                                <button class="btn btn-success" id="addTrainButton">Submit</button>
                             </form>
                         </div> <!-- end card-body -->
                     </div><!-- end card -->
